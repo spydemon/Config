@@ -42,7 +42,8 @@ layouts =
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier
 }
--- }}}
+-- }}
+
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
