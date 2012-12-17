@@ -48,13 +48,13 @@
 
 % Bloc d'introduction.
 \newenvironment*{introduction}{%
-	\begin{center} \begin{minipage}{15cm} \parindent=15pt}{%
-	\end{minipage} \end{center}}
+	\begin{center} \begin{minipage}{15cm} \parindent=15pt}
+	{\end{minipage} \vskip 0.5cm \rule{150pt}{.5pt} \end{center}}
 
 % Bloc de conclusion.
 \newenvironment*{conclusion}{%
-	\vskip 0.5cm \begin{introduction}} {%
-	\end{introduction}}
+	\vskip 0.5cm \begin{center} \begin{minipage}{15cm} \parindent=15pt}
+	{\end{minipage} \end{center}}
 
 % Mise en place d'une ligne entre les colonnes.
 %\setlength\columnseprule{0.2pt} 
