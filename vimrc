@@ -77,6 +77,9 @@ if has("autocmd")
   au VimLeave * silent !echo -ne "\033]12;Cyan\007"
 endif
 
+"Fold par indentation pour les fichiers C++
+autocmd BufNewFile,BufRead *.cpp set foldmethod=indent
+
 "Configuration des mots clefs à colorer aussi en C
 syn keyword cType uint ubyte ulong uint64_t uint32_t uint16_t uint8_t boolean_t int64_t int32_t int16_t int8_t u_int64_t u_int32_t u_int16_t u_int8_t
 
@@ -86,3 +89,9 @@ abbreviate uint uint8_t
 "On remap ctrlP pour utiliser la même touche que command-t
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
+
+"Changer de fenêtre facilement
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-J> :wincmd j<CR>
+nmap <silent> <A-H> :wincmd h<CR>
+nmap <silent> <A-L> :wincmd l<CR>

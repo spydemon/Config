@@ -92,6 +92,7 @@ zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 #}}} 
 
-
+export C=/usr/bin/clang
+export CXX=/usr/bin/clang++
 autoload -U promptinit
 promptinit
