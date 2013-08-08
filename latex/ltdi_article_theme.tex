@@ -1,0 +1,74 @@
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage[utf8]{inputenc}													% Encodage correct pour le français. 
+\usepackage[T1]{fontenc}      												% « Coupage » de mot compatible avec les mots accentués.
+\usepackage[francais]{babel} 													% Configuration de LaTeX pour utiliser les guillemets & cie français. 
+\usepackage{layout}																% Customisation des marges. 
+\usepackage[top=2cm, bottom=2cm, left=0.5cm, right=2cm]{geometry}	% Réglage des marges.
+\usepackage{charter}																% Pack de polices à utiliser.
+\usepackage{url}																	% Rendre les liens cliquables.
+\usepackage{fancyhdr}															% Customisation des en-tête et pied de pages.
+\usepackage{multicol}															% Possibilité d'utiliser des colonnes.
+\usepackage{titlesec} 															% Modification du style des sections.
+\usepackage{lastpage}															% Pour récupérer le numéro de la derière page pour l'afficher dans le footer.
+\usepackage{longtable}															% Pour faire de grands tableaux sur plusieurs pages.
+\usepackage{MnSymbol,wasysym}													% Pour avoir accès à des carractères cools.
+\usepackage{ifthen}
+\usepackage{xstring}
+
+\makeatletter
+
+% Customisation du pied de pages.
+\pagestyle{fancyplain}
+\fancyhf{}																			% On désactive les en-tête et pied de page par défaut.
+\lfoot{ \sc \@footer}	 														% Le texte à écrire en pied de page gauche. 
+\rfoot{\thepage \slash \pageref{LastPage}}								% Le texte à écrire en pied de page droit.
+\renewcommand{\headrulewidth}{0pt}											% On enlève la ligne dessinée par défaut dans l'en-tête de la page.
+\setcounter{secnumdepth}{0} 													% On désactive la numérotation des sections.
+
+% Customisation de la partie titre du documement. 
+% Environnement titlepage à utiliser pour créer une page dédiée.
+\def\maketitle{
+	\begin{center}
+		{\sc \Huge \textbf{\@title}} 
+		\vskip 0.2cm
+		{\textit {\@author}} \\
+		{\@date}
+		\vskip 1cm
+	\end{center}
+}
+
+%Définition de variables utiles.
+\def\user#1{\def\@user{#1}}
+\def\footer#1{\def\@footer{#1}}
+
+% Customisation de l'affichage des sections et subsections.
+\def\section{\@startsection {section}{1}{\z@}{-3.5ex plus -1ex minus 
+    -.2ex}{2.3ex plus .2ex}{\centering\Large\bfseries\scshape}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{-3.25ex plus -1ex minus 
+   -.2ex}{1.5ex plus .2ex}{\centering\scshape}}
+
+% Bloc d'introduction.
+\newenvironment*{introduction}{%
+	\begin{center} \begin{minipage}{15cm} \parindent=15pt}
+	{\end{minipage} \vskip 0.5cm \rule{150pt}{.5pt} \end{center}}
+
+% Bloc de conclusion.
+\newenvironment*{conclusion}{%
+	\vskip 0.5cm \begin{center} \begin{minipage}{15cm} \parindent=15pt}
+	{\end{minipage} \end{center}}
+
+% Définition du tabeau utilisé pour la pièce
+\newenvironment*{scene}{%
+	\begin{longtable}{r|p{17cm}}}{%
+	\end{longtable}}
+
+% Test de l'utilisateur pour savoir la taille
+% Entrées utilisateurs
+\newcommand{\entry}[2]{%
+	#1 & \IfStrEq{#1}{\@user}{\Large}{} #2 \\}
+
+\newcommand{\comment}[1]{%
+	& \begin{center} \textit{#1} \end{center} \\}
+
+\makeatother
