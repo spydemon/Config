@@ -23,13 +23,20 @@ color8 FF95D1 #rose
 
  
 TEXT
-^i[left;0;0;/home/spydemon/.config/wmfs/icons/status/mem.png] ^s[left;\#0099FF; UP: ]  ^g[left;80;10;${upspeedf wlan0};400;\#333333;\#0099FF;ckyup] ^s[left;\#0099FF; ${totalup wlan0}]\
+^i[left;0;0;/home/spydemon/depots/Config/wmfs2/icons/status/mem.png]\
+^s[left;\#0099FF; UP: ]\
+^g[left;80;10;${upspeedf wlp3s0};400;\#333333;\#0099FF;ckyup] ^s[left;\#0099FF; ${totalup wlp3s0}]\
 ^s[left;\#444444; | ]\
-^s[left;\#0099FF;DOWN: ]  ^g[left;80;10;${downspeedf wlan0};400;\#333333;\#0099FF;ckydown] ^s[left;\#0099FF; ${totaldown wlan0}]\
-^i[right;0;0;/home/spydemon/.config/wmfs/icons/status/clock.png] ^s[right;\#BDE077; $uptime]\
+^s[left;\#0099FF;DOWN: ]  ^g[left;80;10;${downspeedf wlp3s0};400;\#333333;\#0099FF;ckydown] ^s[left;\#0099FF; ${totaldown wlp3s0}]\
+^s[left;\#444444; | ]\
+^s[left;\#0099FF; BAT: ]\
+^s[left;\#0099FF;${exec /home/spydemon/depots/Config/wm-scripts/batterie.sh}]\
+^i[right;0;0;/home/spydemon/depots/Config/wmfs2/icons/status/clock.png] ^s[right;\#BDE077; $uptime]\
 ^s[right;\#444444; | ]\
-^i[right;0;0;/home/spydemon/.config/wmfs/icons/status/usb.png] ^s[right;\#BBBBBB; HDD:] ^s[right;\#A6D4E0; ${fs_used_perc /}% ] ^p[right;8;10;0;${fs_used_perc /};100;\#445544;\#A6D4E0;ckyhdd](1;spawn;pcmanfm)\
+^i[right;0;0;/home/spydemon/depots/Config/wmfs2/icons/status/usb.png]\
+^p[right;8;10;0;${fs_used_perc /};100;\#445544;\#A6D4E0;ckyhdd](1;spawn;pcmanfm)\
+^p[right;8;10;0;${fs_used_perc /home};100;\#445544;\#A6D4E0;ckyhdd](1;spawn;pcmanfm)\
+^p[right;8;10;0;${fs_used_perc /var/log};100;\#445544;\#A6D4E0;ckyhdd](1;spawn;pcmanfm)\
 ^s[right;\#444444; | ]\
-^s[right;\#BDE077;${exec /opt/depots/Config/wm-scripts/son.sh}]\
-^i[right;0;0;/home/spydemon/.config/wmfs/icons/status/clock.png]\ ^s[right;\#CCCCCC; ${time %A %d %b}] ^s[right;\#A6D4E0; ${time %H:%M:%S}]\
+^i[right;0;0;/home/spydemon/depots/Config/wmfs2/icons/status/clock.png]\ ^s[right;\#CCCCCC; ${time %A %d %b}] ^s[right;\#A6D4E0; ${time %H:%M:%S}]\
 ^s[right;\#444444; | ]\

@@ -49,8 +49,8 @@
      font = "-*-termsyn.icons-medium-*-*-*-11-*-*-*-*-*-*-*"
      # Bars
      bars_width = 17
-     bars_fg = "#505050"
-     bars_bg = "#050505"
+#bars_fg = "#505050"
+     bars_fg = "#DDDDDD"
      # Element tags
      tags_normal_fg = "#505050"
      tags_normal_bg = "#050505"
@@ -70,8 +70,8 @@
      client_normal_fg = "#202020"
      client_normal_bg = "#050505"
      #client_normal_statusline = "\s[3;9;#7D7D7D;#](1;client_close)"
-     client_sel_fg = "#c0c0c0"
-     #client_sel_bg = "#101010"
+#client_sel_fg = "#c0c0c0"
+     client_sel_bg = "#101010"
 	  client_sel_bg = "C0C0C0"
      #client_sel_statusline = "\s[3;9;#222222;#](1;client_close)"
      frame_bg = "#63b8ff"
@@ -261,9 +261,9 @@
 #  [key] mod = {"Alt"}            key = "Right"            func = "spawn" cmd = "mpc next"                             [/key]
 #  [key] mod = {"Alt"}            key = "plus"             func = "spawn" cmd = "sh /home/luca/.scripts/volup"         [/key]
 #  [key] mod = {"Alt"}            key = "minus"            func = "spawn" cmd = "sh /home/luca/.scripts/voldown"       [/key]
-  [key] mod = {""}               key = "XF86AudioMute"    func = "spawn" cmd = "sh /opt/depots/Config/wm-scripts/son.sh toggle" [/key]
-  [key] mod = {""}               key = "XF86AudioRaiseVolume"  func = "spawn" cmd = "sh /opt/depots/Config/wm-scripts/son.sh plus" [/key]
-  [key] mod = {""}               key = "XF86AudioLowerVolume"  func = "spawn" cmd = "sh /opt/depots/Config/wm-scripts/son.sh minus" [/key]
+  [key] mod = {""}               key = "XF86AudioMute"    func = "spawn" cmd = "sh /home/spydemon/depots/Config/wm-scripts/mute_toggle" [/key]
+  [key] mod = {""}               key = "XF86AudioRaiseVolume"  func = "spawn" cmd = "sh /home/spydemon/depots/Config/wm-scripts/vol_up" [/key]
+  [key] mod = {""}               key = "XF86AudioLowerVolume"  func = "spawn" cmd = "sh /home/spydemon/depots/Config/wm-scripts/vol_down" [/key]
 
   # Launchers
   [key] mod = {"Super"} key = "r" func = "launcher" cmd = "exec" [/key]
